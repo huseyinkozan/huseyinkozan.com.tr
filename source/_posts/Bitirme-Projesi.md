@@ -6,6 +6,8 @@ tags:
   - Bitirme
   - "C/C++"
   - Qt
+category:
+  - Qt
 ---
 İsmini Medical Acquisition kelimelerinin baş kısımlarını alıp Medaq koydğum
 bitirme projemin amacı, NI DAQ kartlarından NIDAQmx sürücü yazılımı

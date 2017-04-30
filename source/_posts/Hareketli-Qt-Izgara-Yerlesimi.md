@@ -5,6 +5,8 @@ tags:
   - "C/C++"
   - Qt
   - "Qt Layout"
+category:
+  - Qt
 ---
 
 &nbsp;

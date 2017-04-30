@@ -6,6 +6,8 @@ tags:
   - "C/C++"
   - Qt
   - Pardus
+category:
+  - Qt
 ---
 
 Linux’te farenin kaydırma tekeri ile veya simgeye tıklayarak ile ekran parlaklığını ayarlayabileceğimiz bir uygulama.

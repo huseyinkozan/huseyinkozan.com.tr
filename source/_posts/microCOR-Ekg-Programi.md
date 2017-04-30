@@ -5,6 +5,8 @@ tags:
   - microCOR EKG
   - "C/C++"
   - Qt
+category:
+  - Qt
 ---
 Infron firmasının ürettiği microCOR EKG cihazı için geliştirdiğim EKG programından ekran görüntüleri.
 

@@ -5,6 +5,8 @@ tags:
   - "C/C++"
   - Qt
   - "Qt Layout"
+category:
+  - Qt
 ---
 
 Qt4 ile sabit oranlı bir layout doğrudan desteklenmiyor. Sabit oranlı bir layout yapabilmek için QLayout’dan yeni bir sınıf türetmemiz gerekiyor. Türetme işlemi yapılırken orantı ile ilgili olmayan, fakat layout a nesne ekleyip çıkarabimek için bazı fonksiyonları da devralmamız gerekiyor.
