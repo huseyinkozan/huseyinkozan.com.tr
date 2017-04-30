@@ -1,6 +1,6 @@
 ---
 title: Qt Sunumu
-date: 2017-04-30 22:42:53
+date: 2014-05-27 00:00:00
 tags:
   - Qt
   - SDÜ
