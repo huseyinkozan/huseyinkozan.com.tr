@@ -70,6 +70,25 @@ services:
       front:
         ipv4_address: 172.25.0.10
 
+  # Nginx server
+  website-tr:
+    image: nginx:alpine
+    container_name: website-tr
+    restart: unless-stopped
+    links:
+      - nginx
+    environment:
+      - VIRTUAL_HOST=xn--hseyinkozan-thb.com.tr
+      - VIRTUAL_PORT=80
+      - LETSENCRYPT_HOST=xn--hseyinkozan-thb.com.tr
+      - LETSENCRYPT_EMAIL=posta@huseyinkozan.com.tr
+      - LETSENCRYPT_TEST            # from .env file
+    volumes:
+      - ./public:/usr/share/nginx/html:ro
+    networks:
+      front:
+        ipv4_address: 172.25.0.11
+
 
 # Static IP : http://stackoverflow.com/q/37242217/3620661
 networks:
