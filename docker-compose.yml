@@ -66,6 +66,7 @@ services:
       - LETSENCRYPT_TEST            # from .env file
     volumes:
       - ./public:/usr/share/nginx/html:ro
+      - /home/hk/files:/usr/share/nginx/html/files:ro
     networks:
       front:
         ipv4_address: 172.25.0.10
@@ -85,6 +86,7 @@ services:
       - LETSENCRYPT_TEST            # from .env file
     volumes:
       - ./public:/usr/share/nginx/html:ro
+      - /home/hk/files:/usr/share/nginx/html/files:ro
     networks:
       front:
         ipv4_address: 172.25.0.11
