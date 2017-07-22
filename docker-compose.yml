@@ -57,7 +57,7 @@ services:
     container_name: website
     restart: unless-stopped
     links:
-      - nginx
+      - nginx-letsencrypt
     environment:
       - VIRTUAL_HOST=huseyinkozan.com.tr
       - VIRTUAL_PORT=80
@@ -77,7 +77,7 @@ services:
     container_name: website-tr
     restart: unless-stopped
     links:
-      - nginx
+      - nginx-letsencrypt
     environment:
       - VIRTUAL_HOST=xn--hseyinkozan-thb.com.tr
       - VIRTUAL_PORT=80
