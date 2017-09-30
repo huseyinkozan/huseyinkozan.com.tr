@@ -99,6 +99,13 @@ services:
     restart: always
     links:
       - nginx
+      - nginx-letsencrypt
+    environment:
+      - VIRTUAL_HOST=ns.huseyinkozan.com.tr
+      - VIRTUAL_PORT=10000
+      - LETSENCRYPT_HOST=ns.huseyinkozan.com.tr
+      - LETSENCRYPT_EMAIL=posta@huseyinkozan.com.tr
+      - LETSENCRYPT_TEST            # from .env file
     environment:
       - ROOT_PASSWORD                 # from .env file
     ports:
