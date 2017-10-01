@@ -20,6 +20,12 @@
   ```
   hexo generate
   ```
+* Create files dir:
+  ```
+  mkdir ~/files
+  cd <path/of/this/repo>
+  mkdir -p public/files
+  ```
 
 ## Run
 
