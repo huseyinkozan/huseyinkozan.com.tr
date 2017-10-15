@@ -91,33 +91,6 @@ services:
       front:
         ipv4_address: 172.25.0.11
 
-  # DNS Server
-  ns:
-    image: sameersbn/bind:latest
-    container_name: ns
-    hostname: ns.huseyinkozan.com.tr
-    restart: always
-    links:
-      - nginx
-      - nginx-letsencrypt
-    environment:
-      - VIRTUAL_HOST=ns.huseyinkozan.com.tr
-      - VIRTUAL_PORT=10000
-      - LETSENCRYPT_HOST=ns.huseyinkozan.com.tr
-      - LETSENCRYPT_EMAIL=posta@huseyinkozan.com.tr
-      - LETSENCRYPT_TEST            # from .env file
-    environment:
-      - ROOT_PASSWORD                 # from .env file
-    ports:
-      - "53:53/udp"
-      - "53:53/tcp"
-      - "10000:10000/tcp"
-    volumes:
-      - ./data/bind:/data
-    networks:
-      front:
-        ipv4_address: 172.25.0.100
-
 # Static IP : http://stackoverflow.com/q/37242217/3620661
 networks:
   front:
