@@ -5,8 +5,11 @@ services:
   # Let's Encrypt nginx-proxy. Resources:
   #   https://github.com/indiehosters/nginx
   #   https://github.com/gilyes/docker-nginx-letsencrypt-sample     # explains below
+  #   https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion/blob/master/docker-compose.yml
   nginx:
     image: nginx:alpine
+    labels:
+      com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy: "true"
     container_name: nginx
     restart: unless-stopped
     volumes:
@@ -18,6 +21,9 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    dns:
+      - 4.2.2.2
+      - 8.8.8.8
     networks:
       front:
         ipv4_address: 172.25.0.2
@@ -31,6 +37,9 @@ services:
     volumes:
       - ./proxy/templates/nginx.tmpl:/etc/docker-gen/templates/nginx.tmpl:ro
       - /var/run/docker.sock:/tmp/docker.sock:ro
+    dns:
+      - 4.2.2.2
+      - 8.8.8.8
     networks:
       front:
         ipv4_address: 172.25.0.3
@@ -47,6 +56,10 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     environment:
       - NGINX_DOCKER_GEN_CONTAINER=nginx-gen
+      - NGINX_PROXY_CONTAINER=nginx
+    dns:
+      - 4.2.2.2
+      - 8.8.8.8
     networks:
       front:
         ipv4_address: 172.25.0.4
@@ -67,6 +80,9 @@ services:
     volumes:
       - ./public:/usr/share/nginx/html:ro
       - /home/hk/files:/usr/share/nginx/html/files:ro
+    dns:
+      - 4.2.2.2
+      - 8.8.8.8
     networks:
       front:
         ipv4_address: 172.25.0.10
@@ -87,6 +103,9 @@ services:
     volumes:
       - ./public:/usr/share/nginx/html:ro
       - /home/hk/files:/usr/share/nginx/html/files:ro
+    dns:
+      - 4.2.2.2
+      - 8.8.8.8
     networks:
       front:
         ipv4_address: 172.25.0.11
