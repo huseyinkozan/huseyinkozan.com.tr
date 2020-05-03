@@ -43,8 +43,3 @@
   ```
   docker-compose up
   ```
-
-
-## TODO
-
-* Switch to `hexo-renderer-pug`.
