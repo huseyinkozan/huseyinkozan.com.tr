@@ -33,6 +33,20 @@
   nano .env
   ```
 
+
+## Update
+
+```
+cd <path/of/this/repo>
+git pull
+cd themes/BlueLake
+git pull
+cd ..
+npm i
+hexo generate
+```
+
+
 ## Run
 
 * Serve HTTP:
